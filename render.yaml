@@ -3,7 +3,7 @@ services:
     runtime: image
     name: alpine-chrome
     image:
-    url: docker.io/zenika/alpine-chrome:latest
+      url: docker.io/zenika/alpine-chrome:latest
 
   - type: web
     name: gaugin

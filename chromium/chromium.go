@@ -99,7 +99,7 @@ func takeScreenshot(res *[]byte, html string, width float64, height float64) chr
 		chromedp.WaitReady("image"),
 		chromedp.ActionFunc(func(ctx context.Context) error {
 
-			_, _, contentSize, err := page.GetLayoutMetrics().Do(ctx)
+			_, _, _, _, _, contentSize, err := page.GetLayoutMetrics().Do(ctx)
 			if err != nil {
 				return err
 			}

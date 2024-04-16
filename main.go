@@ -5,8 +5,8 @@ import (
 	"os"
 
 	"github.com/gin-gonic/gin"
-	config "github.com/micheleriva/gauguin/config"
-	controller "github.com/micheleriva/gauguin/controller"
+	"github.com/lucidconnect/gauguin/config"
+	"github.com/lucidconnect/gauguin/controller"
 )
 
 var router = gin.Default()

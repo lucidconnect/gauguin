@@ -12,8 +12,8 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/gin-gonic/gin/render"
-	chromium "github.com/micheleriva/gauguin/chromium"
-	config "github.com/micheleriva/gauguin/config"
+	chromium "github.com/lucidconnect/gauguin/chromium"
+	config "github.com/lucidconnect/gauguin/config"
 )
 
 // ImageSize represents the size of a given image
@@ -23,11 +23,11 @@ type ImageSize struct {
 }
 
 type WebHook struct {
-	Action       string `json:"action"`
-	Route        string `json:"route"`
-	Template     string `json:"template"`
-	CacheControl string `json:"cache-control"`
-	Size         string `json:"size"`
+	Action       string            `json:"action"`
+	Route        string            `json:"route"`
+	Template     string            `json:"template"`
+	CacheControl string            `json:"cache-control"`
+	Size         string            `json:"size"`
 	Params       map[string]string `json:"params"`
 }
 
@@ -139,12 +139,12 @@ func callHook(hook config.ResponseHook, action string, confRoute config.ConfigV0
 	client := &http.Client{}
 
 	body, _ := json.Marshal(WebHook{
-		Action: action,
-		Route: confRoute.Path,
-		Template: confRoute.Template,
+		Action:       action,
+		Route:        confRoute.Path,
+		Template:     confRoute.Template,
 		CacheControl: confRoute.CacheControl,
-		Size: confRoute.Size,
-		Params: params,
+		Size:         confRoute.Size,
+		Params:       params,
 	})
 
 	responseBody := bytes.NewBuffer(body)

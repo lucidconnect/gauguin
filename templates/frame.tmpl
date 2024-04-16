@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial;
+        color: #00000;
+      }
+      .article-template {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 1200px;
+        height: 630px;
+        background: #FFFFF
+        background-image: url({{.imgUrl}});
+        background-size: cover;
+      }
+      p {
+        margin: 0;
+        font-size: 20px;
+      }
+      .img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 15px;
+        margin-bottom: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="article-template">
+        <p>{{.text}}</p>
+    </div>
+  </body>
+</html>

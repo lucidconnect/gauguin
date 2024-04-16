@@ -1,6 +1,6 @@
-templates/*.tmpl
+# templates/*.tmpl
 public/templates/**/*.css
-gauguin.yaml
+# gauguin.yaml
 .env
 .idea
 

@@ -52,12 +52,14 @@ func getCDTData() ChromeDevToolsVersion {
 		log.Fatal(err)
 	}
 
+	fmt.Println(string(resp.Body()))
 	err = json.Unmarshal(resp.Body(), &CDTData)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	CDTData.WebSocketDebuggerURL = strings.Replace(CDTData.WebSocketDebuggerURL, "localhost", "alpine_chrome:9222", 1)
+	fmt.Println("websocket debugger ",CDTData.WebSocketDebuggerURL)
+	CDTData.WebSocketDebuggerURL = strings.Replace(CDTData.WebSocketDebuggerURL, "localhost", "localhost:9222", 1)
 
 	return CDTData
 }

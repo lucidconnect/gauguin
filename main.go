@@ -5,6 +5,7 @@ import (
 	"os"
 
 	"github.com/gin-gonic/gin"
+	"github.com/joho/godotenv"
 	"github.com/lucidconnect/gauguin/config"
 	"github.com/lucidconnect/gauguin/controller"
 )
@@ -28,5 +29,6 @@ func init() {
 }
 
 func main() {
+	godotenv.Load()
 	router.Run()
 }

@@ -58,7 +58,7 @@ func getCDTData() ChromeDevToolsVersion {
 		log.Fatal(err)
 	}
 
-	fmt.Println("websocket debugger ", CDTData.WebSocketDebuggerURL)
+	fmt.Println("websocket debugger ", CDTData.WebSocketDebuggerURL, os.Getenv("RENDER_ENV"))
 	isRenderEnvironment := os.Getenv("RENDER_ENV") == "true"
 	fmt.Println(isRenderEnvironment)
 	if isRenderEnvironment {

@@ -57,6 +57,7 @@ func HandleRoutes(c *gin.Context) {
 	}
 
 	if route.Path == "/" {
+		c.Writer.WriteHeader(200)
 		c.Writer.Write([]byte("gauguin server"))
 		return
 	}

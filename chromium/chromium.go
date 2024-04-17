@@ -60,6 +60,7 @@ func getCDTData() ChromeDevToolsVersion {
 
 	fmt.Println("websocket debugger ", CDTData.WebSocketDebuggerURL)
 	isRenderEnvironment := os.Getenv("RENDER_ENV") == "true"
+	fmt.Println(isRenderEnvironment)
 	if isRenderEnvironment {
 		CDTData.WebSocketDebuggerURL = strings.Replace(CDTData.WebSocketDebuggerURL, "localhost", "alpine-chrome:9222", 1)
 	} else {

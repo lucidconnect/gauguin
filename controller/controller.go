@@ -56,6 +56,11 @@ func HandleRoutes(c *gin.Context) {
 		params[param] = c.Query(param)
 	}
 
+	if route.Path == "/" {
+		c.Writer.Write([]byte("gauguin server"))
+		return
+	}
+
 	templateString, err := ioutil.ReadFile(route.Template)
 	if err != nil {
 		panic(err)
